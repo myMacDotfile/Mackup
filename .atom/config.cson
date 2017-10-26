@@ -1,0 +1,29 @@
+"*":
+  Hydrogen:
+    debug: true
+  "atom-python-run": {}
+  "atom-runner":
+    paneSplitDirection: "Down"
+  "auto-header":
+    author: "Nemo"
+  "autocomplete-python":
+    useKite: false
+  core:
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 12
+    showIndentGuide: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "253651be-956a-4abb-a0a6-384a5b47f794"
+  "git-plus":
+    commits:
+      verboseCommits: true
+    general: {}
+  "linter-flake8":
+    executablePath: "/Users/lizhiwei/.virtualenvs/flask/bin/flake8"
+  "linter-ui-default":
+    panelHeight: 66
+    showPanel: true
+  "python-autopep8":
+    maxLineLength: 80

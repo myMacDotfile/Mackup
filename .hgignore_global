@@ -1,0 +1,7 @@
+syntax: glob
+
+*~
+.DS_Store
+.idea
+.pyc
+0001_initial.py

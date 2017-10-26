@@ -1,0 +1,32 @@
+{
+    "window.zoomLevel": -1,
+
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/bower.json"
+            ],
+            "url": "http://json.schemastore.org/bower"
+        }
+    ],
+    // "files.autoSave": "afterDelay",
+
+    "file.associations": {
+        ".eslintrc": "json"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    // "editor.renderIndentGuides": false,
+    "sync.gist": "a8b7195aaabf2a181b46b49c97f4d268",
+    "sync.lastUpload": "2017-09-27T10:44:18.281Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "editor.renderIndentGuides": false,
+    "vim.disableAnnoyingNeovimMessage": true
+}

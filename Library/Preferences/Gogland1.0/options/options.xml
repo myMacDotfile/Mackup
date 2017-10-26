@@ -1,0 +1,9 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="evlsprt3.GO-173.2696.28" value="12" />
+    <property name="go.init.cfg.2" value="true" />
+    <property name="go.init.cfg.line.markers" value="true" />
+    <property name="LayoutCode.optimizeImports" value="true" />
+    <property name="go.optimizeImportsByDefault" value="true" />
+  </component>
+</application>

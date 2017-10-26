@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>begin SelectionChanged {
+    document = "&lt;MSDocument: 0x7fe266678400&gt;";
+    newSelection =     (
+        "&lt;MSSliceLayer: 0x600000394d20&gt; web 2 (60FF2713-2DBA-4E8A-94E3-49C0E9E0D901)"
+    );
+    oldSelection =     (
+    );
+}</string>
+	<string>finish SelectionChanged {
+    document = "&lt;MSDocument: 0x7fe266678400&gt;";
+    newSelection =     (
+        "&lt;MSSliceLayer: 0x600000394d20&gt; web 2 (60FF2713-2DBA-4E8A-94E3-49C0E9E0D901)"
+    );
+    oldSelection =     (
+    );
+}</string>
+	<string>instant CloseDocument {
+}</string>
+	<string>instant OpenDocument {
+}</string>
+	<string>instant CloseDocument {
+}</string>
+	<string>instant OpenDocument {
+}</string>
+	<string>instant OpenDocument {
+}</string>
+	<string>instant OpenDocument {
+}</string>
+	<string>begin SelectionChanged {
+    document = "&lt;MSDocument: 0x7f8b71630190&gt;";
+    newSelection =     (
+        "&lt;MSBitmapLayer: 0x7f8b71636390&gt; sss (EDB759E7-BE31-4F1E-887F-8F545EFED9B3)"
+    );
+    oldSelection =     (
+    );
+}</string>
+	<string>finish SelectionChanged {
+    document = "&lt;MSDocument: 0x7f8b71630190&gt;";
+    newSelection =     (
+        "&lt;MSBitmapLayer: 0x7f8b71636390&gt; sss (EDB759E7-BE31-4F1E-887F-8F545EFED9B3)"
+    );
+    oldSelection =     (
+    );
+}</string>
+	<string>instant DocumentSaved {
+    autosaved = 1;
+    size = 139264;
+}</string>
+</array>
+</plist>

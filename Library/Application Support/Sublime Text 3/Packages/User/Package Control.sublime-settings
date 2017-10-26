@@ -1,0 +1,35 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"ChineseTranslator"
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"3024 Color Scheme",
+		"42 Headers",
+		"A File Icon",
+		"Anaconda",
+		"anaconda_go",
+		"Boxy Theme",
+		"ChineseTranslator",
+		"Evernote",
+		"Flask Completions",
+		"Flask Starter",
+		"Git",
+		"Golang Build",
+		"Inline Google Translate",
+		"MacDown App Menu",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Markdown Slideshow",
+		"MarkdownEditing",
+		"MarkdownLivePreview",
+		"Package Control",
+		"Pretty YAML",
+		"SublimeLinter-rst",
+		"Theme - Freesia",
+		"Virtualenv"
+	]
+}

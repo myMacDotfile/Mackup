@@ -1,0 +1,1176 @@
+[2017-10-25 11:40:55.777][test_rds_mysql][006141][MYSQL][]
+SHOW VARIABLES LIKE 'lower_case_%';
+
+[2017-10-25 11:40:55.797][test_rds_mysql][006141][MYSQL][]
+SHOW DATABASES
+
+[2017-10-25 11:40:58.697][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:41:00.378][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:41:02.754][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:41:02.967][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:41:02.979][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:41:02.99][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:41:38.364][prod_rds_mysql][009794][MYSQL][]
+SHOW VARIABLES LIKE 'lower_case_%';
+
+[2017-10-25 11:41:38.505][prod_rds_mysql][009794][MYSQL][]
+SHOW DATABASES
+
+[2017-10-25 11:41:41.607][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:41:42.656][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:41:48.597][prod_rds_mysql][009794][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:41:48.719][prod_rds_mysql][009795][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:41:48.734][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:41:48.746][prod_rds_mysql][009794][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:42:31.174][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` ORDER BY `nfc_id` LIMIT 0, 1000
+
+[2017-10-25 11:42:31.298][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:42:31.31][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:42:31.321][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:42:36.208][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` ORDER BY `nfc_id` DESC LIMIT 0, 1000
+
+[2017-10-25 11:42:36.359][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:42:36.374][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:42:36.385][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:43:15.313][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` ORDER BY `update_time` DESC LIMIT 0, 1000
+
+[2017-10-25 11:43:15.403][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:43:15.426][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:43:15.438][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:05.22][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLES
+
+[2017-10-25 11:44:05.242][prod_rds_mysql][009794][MYSQL][]
+SHOW CREATE TABLE `goods_for_show` 
+
+[2017-10-25 11:44:05.268][prod_rds_mysql][009794][MYSQL][]
+SELECT action_order, event_object_table, trigger_name, event_manipulation, event_object_table, definer, action_statement, action_timing FROM information_schema.triggers WHERE BINARY event_object_schema = 'elabels' AND BINARY event_object_table = 'goods_for_show' ORDER BY event_object_table
+
+[2017-10-25 11:44:05.359][prod_rds_mysql][009794][MYSQL][]
+SHOW CREATE TABLE `goods_for_show` 
+
+[2017-10-25 11:44:05.384][prod_rds_mysql][009794][MYSQL][]
+SHOW FULL COLUMNS FROM `goods_for_show`
+
+[2017-10-25 11:44:05.431][prod_rds_mysql][009794][MYSQL][]
+SET FOREIGN_KEY_CHECKS=0
+
+[2017-10-25 11:44:05.443][prod_rds_mysql][009794][MYSQL][]
+CREATE TABLE `goods_for_show_copy1` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `good_name` varchar(200) DEFAULT NULL COMMENT '商品名',
+  `code` varchar(30) DEFAULT NULL COMMENT '商品国际69编码',
+  `unit` varchar(10) DEFAULT NULL COMMENT '单位',
+  `brand` varchar(25) DEFAULT NULL COMMENT '品牌',
+  `detail_info` varchar(200) DEFAULT NULL COMMENT '详细描述',
+  `pic_urls` varchar(200) DEFAULT NULL COMMENT '照片CDN url',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '商品创建时间',
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last update time',
+  `origin` varchar(200) DEFAULT NULL COMMENT '产地',
+  `category_id` int(11) DEFAULT NULL COMMENT '全局最接近叶子的品类id',
+  `spec` varchar(30) DEFAULT NULL,
+  `life` int(11) DEFAULT NULL COMMENT '保质期',
+  `full_pinyin` varchar(200) DEFAULT NULL COMMENT '商品名称全拼',
+  `brief_pinyin` varchar(50) DEFAULT NULL COMMENT '名称首字母缩写',
+  `sec_cate_id` int(11) DEFAULT NULL,
+  `amount` float DEFAULT NULL,
+  `shop_id` int(11) DEFAULT NULL,
+  `shop_code` varchar(255) DEFAULT NULL,
+  `regualar_price` float DEFAULT NULL,
+  `goods_birth` datetime DEFAULT NULL,
+  `detail` text,
+  `sale_price` float DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `code69` (`code`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+
+[2017-10-25 11:44:05.815][prod_rds_mysql][009794][MYSQL][]
+INSERT INTO `goods_for_show_copy1` SELECT * FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:05.857][prod_rds_mysql][009794][MYSQL][]
+SET FOREIGN_KEY_CHECKS=1
+
+[2017-10-25 11:44:05.881][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:44:14.331][prod_rds_mysql][009794][MYSQL][]
+DELETE FROM `goods_for_show`
+
+[2017-10-25 11:44:14.393][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:44:19.212][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:44:28.859][prod_rds_mysql][009794][MYSQL][]
+DELETE FROM `goods_for_show`
+
+[2017-10-25 11:44:28.897][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:44:32.376][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:44:39.585][prod_rds_mysql][009794][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:44:39.622][prod_rds_mysql][009795][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:39.636][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:44:39.649][prod_rds_mysql][009794][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:42.009][prod_rds_mysql][009794][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:44:42.03][prod_rds_mysql][009795][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:42.053][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:44:42.065][prod_rds_mysql][009794][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:45.517][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` ORDER BY `update_time` DESC LIMIT 0, 1000
+
+[2017-10-25 11:44:45.646][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:44:45.661][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:44:45.675][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:01.736][prod_rds_mysql][009794][MYSQL][]
+DROP TABLE `elabels`.`goods_for_show_copy1`;
+
+[2017-10-25 11:45:02.291][prod_rds_mysql][009794][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:45:08.826][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:08.951][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:08.964][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:08.975][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:23.164][test_rds_mysql][006141][MYSQL][]
+SHOW TABLES
+
+[2017-10-25 11:45:23.187][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `goods_for_show` 
+
+[2017-10-25 11:45:23.21][test_rds_mysql][006141][MYSQL][]
+SELECT action_order, event_object_table, trigger_name, event_manipulation, event_object_table, definer, action_statement, action_timing FROM information_schema.triggers WHERE BINARY event_object_schema = 'elabels' AND BINARY event_object_table = 'goods_for_show' ORDER BY event_object_table
+
+[2017-10-25 11:45:23.234][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `goods_for_show` 
+
+[2017-10-25 11:45:23.259][test_rds_mysql][006141][MYSQL][]
+SHOW FULL COLUMNS FROM `goods_for_show`
+
+[2017-10-25 11:45:23.285][test_rds_mysql][006141][MYSQL][]
+SET FOREIGN_KEY_CHECKS=0
+
+[2017-10-25 11:45:23.296][test_rds_mysql][006141][MYSQL][]
+CREATE TABLE `goods_for_show_copy1` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `good_name` varchar(200) DEFAULT NULL COMMENT '商品名',
+  `code` varchar(30) DEFAULT NULL COMMENT '商品国际69编码',
+  `unit` varchar(10) DEFAULT NULL COMMENT '单位',
+  `brand` varchar(25) DEFAULT NULL COMMENT '品牌',
+  `detail_info` varchar(200) DEFAULT NULL COMMENT '详细描述',
+  `pic_urls` text COMMENT '照片CDN url',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '商品创建时间',
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last update time',
+  `origin` varchar(200) DEFAULT NULL COMMENT '产地',
+  `category_id` int(11) DEFAULT NULL COMMENT '全局最接近叶子的品类id',
+  `spec` varchar(30) DEFAULT NULL,
+  `life` varchar(11) DEFAULT NULL COMMENT '保质期',
+  `full_pinyin` varchar(200) DEFAULT NULL COMMENT '商品名称全拼',
+  `brief_pinyin` varchar(50) DEFAULT NULL COMMENT '名称首字母缩写',
+  `sec_cate_id` int(11) NOT NULL,
+  `amount` float DEFAULT NULL,
+  `shop_id` int(11) DEFAULT NULL,
+  `shop_code` varchar(255) DEFAULT NULL,
+  `regualar_price` float DEFAULT NULL,
+  `goods_birth` datetime DEFAULT NULL,
+  `detail` text,
+  `sale_price` float DEFAULT NULL,
+  `nfc_id` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `code69` (`code`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=447 DEFAULT CHARSET=utf8;
+
+[2017-10-25 11:45:23.401][test_rds_mysql][006141][MYSQL][]
+INSERT INTO `goods_for_show_copy1` SELECT * FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:23.548][test_rds_mysql][006141][MYSQL][]
+SET FOREIGN_KEY_CHECKS=1
+
+[2017-10-25 11:45:23.57][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:45:28.114][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `goods_for_show`
+
+[2017-10-25 11:45:28.149][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:45:32.281][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:32.303][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:32.316][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:32.327][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:34.467][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:34.49][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:34.503][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:34.514][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:43.536][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:43.867][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:43.881][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:43.893][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:46.184][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:46.217][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:46.24][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:46.252][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:49.235][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:45:49.259][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:49.273][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:45:49.284][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:45:55.056][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 11:46:51.64][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:46:51.663][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:46:51.674][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:46:51.684][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:46:54.74][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:46:55.083][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:46:55.096][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:46:55.107][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:00.642][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 38
+
+[2017-10-25 11:48:00.664][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 39
+
+[2017-10-25 11:48:00.676][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 40
+
+[2017-10-25 11:48:00.699][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 41
+
+[2017-10-25 11:48:00.722][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 43
+
+[2017-10-25 11:48:00.743][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 44
+
+[2017-10-25 11:48:00.765][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 45
+
+[2017-10-25 11:48:00.808][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 46
+
+[2017-10-25 11:48:00.864][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`categorys_for_show` WHERE `id` = 47
+
+[2017-10-25 11:48:10.286][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:10.32][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:10.333][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:48:10.346][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:19.503][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`goods_for_show` WHERE `id` = 447
+
+[2017-10-25 11:48:19.515][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`goods_for_show` WHERE `id` = 448
+
+[2017-10-25 11:48:19.526][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`goods_for_show` WHERE `id` = 449
+
+[2017-10-25 11:48:19.547][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`goods_for_show` WHERE `id` = 450
+
+[2017-10-25 11:48:19.558][test_rds_mysql][006141][MYSQL][]
+DELETE FROM `elabels`.`goods_for_show` WHERE `id` = 451
+
+[2017-10-25 11:48:21.368][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:21.391][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:21.403][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:48:21.415][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:23.254][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:23.277][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:23.288][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:48:23.309][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:31.355][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:31.39][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:31.404][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:48:31.417][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:34.742][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:34.765][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:34.779][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:48:34.79][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:48:37.147][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:48:37.169][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:48:37.18][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:48:37.193][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:51:54.537][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:51:54.562][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:51:54.777][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:51:55.113][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:51:59.608][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:51:59.653][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:51:59.882][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:51:59.894][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:57:53.168][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:57:53.547][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 11:57:53.571][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 11:57:53.583][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 11:58:02.37][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:58:02.391][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:58:02.403][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:58:02.415][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 11:58:04.483][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 11:58:04.824][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 11:58:04.835][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 11:58:04.847][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 12:05:30.683][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 12:05:30.705][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 12:05:30.717][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 12:05:30.739][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 12:05:38.213][test_rds_mysql][006141][MYSQL][]
+SELECT * FROM `elabels`.`goods_for_show` LIMIT 0, 1000
+
+[2017-10-25 12:05:38.291][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`goods_for_show`
+
+[2017-10-25 12:05:38.307][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS LIKE 'goods_for_show'
+
+[2017-10-25 12:05:38.321][test_rds_mysql][006141][MYSQL][]
+SHOW CREATE TABLE `elabels`.`goods_for_show`
+
+[2017-10-25 12:05:48.607][test_rds_mysql][006141][MYSQL][]
+SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'elabels'UNION SELECT COUNT(*) FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'elabels'UNION SELECT COUNT(*) FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA = 'elabels'
+
+[2017-10-25 12:05:48.644][test_rds_mysql][006142][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 12:05:48.72][test_rds_mysql][006142][MYSQL][]
+SHOW VARIABLES LIKE 'lower_case_%';
+
+[2017-10-25 12:05:48.731][test_rds_mysql][006141][MYSQL][]
+SELECT TABLE_NAME, CHECK_OPTION, IS_UPDATABLE, SECURITY_TYPE, DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = 'elabels' ORDER BY TABLE_NAME ASC
+
+[2017-10-25 12:05:48.848][test_rds_mysql][006141][MYSQL][]
+SHOW TABLE STATUS
+
+[2017-10-25 12:05:48.886][test_rds_mysql][006141][MYSQL][]
+SELECT TABLE_NAME, CHECK_OPTION, IS_UPDATABLE, SECURITY_TYPE, DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA = 'elabels' ORDER BY TABLE_NAME ASC
+
+[2017-10-25 12:06:08.352][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:06:08.362][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:08.386][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:08.411][test_rds_mysql][006141][MYSQL][]
+select count（*） from goods
+
+[2017-10-25 12:06:08.421][test_rds_mysql][006141][MYSQL][]
+Table 'elabels.goods' doesn't exist
+
+[2017-10-25 12:06:28.852][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:06:28.874][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:28.899][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:28.936][test_rds_mysql][006141][MYSQL][]
+select count(*) from goods
+
+[2017-10-25 12:06:28.957][test_rds_mysql][006141][MYSQL][]
+Table 'elabels.goods' doesn't exist
+
+[2017-10-25 12:06:44.079][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:06:44.09][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:44.115][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:44.139][test_rds_mysql][006141][MYSQL][]
+select count(*) from goods_for_show
+
+[2017-10-25 12:06:44.152][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:06:44.178][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:06:44.189][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001732*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=2 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:16:06.277][test_rds_mysql][006142][MYSQL][]
+SELECT * FROM `elabels`.`categorys_for_show` LIMIT 0, 1000
+
+[2017-10-25 12:16:06.301][test_rds_mysql][006151][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`categorys_for_show`
+
+[2017-10-25 12:16:06.322][test_rds_mysql][006142][MYSQL][]
+SHOW TABLE STATUS LIKE 'categorys_for_show'
+
+[2017-10-25 12:16:06.335][test_rds_mysql][006142][MYSQL][]
+SHOW CREATE TABLE `elabels`.`categorys_for_show`
+
+[2017-10-25 12:16:44.92][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:16:44.934][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:16:44.965][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:16:45.003][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+select category_name, amount from categorys_for_show
+
+[2017-10-25 12:16:45.014][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:16:45.043][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:16:45.055][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001402*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=6 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:17:53.263][test_rds_mysql][006142][MYSQL][]
+SELECT * FROM `elabels`.`shop_goods` LIMIT 0, 1000
+
+[2017-10-25 12:17:53.394][test_rds_mysql][006151][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`shop_goods`
+
+[2017-10-25 12:17:53.406][test_rds_mysql][006142][MYSQL][]
+SHOW TABLE STATUS LIKE 'shop_goods'
+
+[2017-10-25 12:17:53.42][test_rds_mysql][006142][MYSQL][]
+SHOW CREATE TABLE `elabels`.`shop_goods`
+
+[2017-10-25 12:18:00.196][test_rds_mysql][006142][MYSQL][]
+SELECT * FROM `elabels`.`shop_goods` ORDER BY `update_time` DESC LIMIT 0, 1000
+
+[2017-10-25 12:18:00.384][test_rds_mysql][006151][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`shop_goods`
+
+[2017-10-25 12:18:00.407][test_rds_mysql][006142][MYSQL][]
+SHOW TABLE STATUS LIKE 'shop_goods'
+
+[2017-10-25 12:18:00.42][test_rds_mysql][006142][MYSQL][]
+SHOW CREATE TABLE `elabels`.`shop_goods`
+
+[2017-10-25 12:19:00.619][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:19:00.63][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:00.656][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:00.681][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select * from shop_goods where update_time LIKE %'2017-10-25'%
+
+[2017-10-25 12:19:00.703][test_rds_mysql][006141][MYSQL][]
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'2017-10-25'%' at line 4
+
+[2017-10-25 12:19:16.596][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:19:16.606][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:16.633][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:16.668][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select * from shop_goods where update_time LIKE %'2017-10-25'%
+
+[2017-10-25 12:19:16.68][test_rds_mysql][006141][MYSQL][]
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'2017-10-25'%' at line 4
+
+[2017-10-25 12:19:32.716][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:19:32.728][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:32.756][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:32.78][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select * from shop_goods where update_time in '2017-10-25'
+
+[2017-10-25 12:19:32.793][test_rds_mysql][006141][MYSQL][]
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2017-10-25'' at line 4
+
+[2017-10-25 12:19:46.476][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:19:46.49][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:46.525][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:46.56][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select * from shop_goods where update_time LIKE '2017-10-25'
+
+[2017-10-25 12:19:46.836][test_rds_mysql][006142][MYSQL][]
+SELECT * FROM `elabels`.`shop_goods` LIMIT 0
+
+[2017-10-25 12:19:46.858][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`shop_goods`
+
+[2017-10-25 12:19:46.88][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:19:46.907][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:19:46.919][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000097*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=25 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:21:43.349][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:21:43.361][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:21:43.389][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:21:43.414][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select * from shop_goods where update_time > '2017-10-25'
+
+[2017-10-25 12:21:49.12][test_rds_mysql][006142][MYSQL][]
+SELECT * FROM `elabels`.`shop_goods` LIMIT 0
+
+[2017-10-25 12:21:49.141][test_rds_mysql][006142][MYSQL][]
+SHOW COLUMNS FROM `elabels`.`shop_goods`
+
+[2017-10-25 12:21:49.153][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:21:49.188][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:21:49.199][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001732*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=32 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:21:59.706][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:21:59.729][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:21:59.816][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:21:59.871][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time > '2017-10-25'
+
+[2017-10-25 12:22:00.059][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:00.083][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:22:00.109][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000773*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=39 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:22:09.938][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:22:09.949][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:09.986][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:10.032][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time > '2017-10-24'
+
+[2017-10-25 12:22:10.223][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:10.262][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:22:10.273][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000839*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=46 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:22:17.9][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:22:17.911][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:17.946][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:17.981][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time > '2017-10-23'
+
+[2017-10-25 12:22:18.176][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:18.213][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:22:18.225][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000845*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=53 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:22:25.727][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:22:25.738][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:25.787][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:25.843][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time > '2017-10-22'
+
+[2017-10-25 12:22:26.387][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:22:26.425][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:22:26.449][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000941*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=60 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:23:11.328][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:23:11.35][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:11.385][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:11.42][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+-- select count(*) from shop_goods where update_time > '2017-10-22'
+select count(*) from shop_goods where shop_id =2
+
+[2017-10-25 12:23:11.6][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:11.635][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:23:11.658][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001043*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=67 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:23:43.517][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:23:43.527][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:43.565][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:43.601][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+-- select count(*) from shop_goods where update_time > '2017-10-22'
+select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 12:23:43.654][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:43.69][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:23:43.702][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000901*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=74 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:23:57.324][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:23:57.346][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:57.382][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:57.416][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time > '2017-10-22'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 12:23:57.608][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:23:57.646][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:23:57.659][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000957*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=81 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 12:24:22.361][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 12:24:22.372][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:24:22.408][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:24:22.435][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where update_time = '2017-10-22'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 12:24:22.664][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 12:24:22.689][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 12:24:22.701][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000969*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=88 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:22:39.979][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:22:39.991][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:22:40.025][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:22:40.062][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where  '2017-10-22' IN update_time
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:22:40.072][test_rds_mysql][006141][MYSQL][]
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'update_time
+-- select count(*) from shop_goods where shop_id =1' at line 4
+
+[2017-10-25 13:23:03.921][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:23:03.932][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:03.957][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:03.993][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where create_time > '2017-10-22'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:23:04.179][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:04.217][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:23:04.23][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001681*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=99 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:23:15.035][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:23:15.048][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:15.075][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:15.102][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where create_time > '2017-10-23'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:23:15.286][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:23:15.311][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:23:15.323][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.001567*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=106 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:23:29.35][test_rds_mysql][006142][MYSQL][]
+SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'create_time' ORDER BY TABLE_SCHEMA, TABLE_TYPE
+
+[2017-10-25 13:23:29.363][test_rds_mysql][006142][MYSQL][]
+SELECT DISTINCT ROUTINE_SCHEMA, ROUTINE_NAME, PARAMS.PARAMETER FROM information_schema.ROUTINES LEFT JOIN ( SELECT SPECIFIC_SCHEMA, SPECIFIC_NAME, GROUP_CONCAT(CONCAT(DATA_TYPE, ' ', PARAMETER_NAME) ORDER BY ORDINAL_POSITION SEPARATOR ', ') PARAMETER, ROUTINE_TYPE FROM information_schema.PARAMETERS GROUP BY SPECIFIC_SCHEMA, SPECIFIC_NAME, ROUTINE_TYPE ) PARAMS ON ROUTINES.ROUTINE_SCHEMA = PARAMS.SPECIFIC_SCHEMA AND ROUTINES.ROUTINE_NAME = PARAMS.SPECIFIC_NAME AND ROUTINES.ROUTINE_TYPE = PARAMS.ROUTINE_TYPE WHERE ROUTINE_SCHEMA = 'create_time' ORDER BY ROUTINE_SCHEMA
+
+[2017-10-25 13:23:29.376][test_rds_mysql][006142][MYSQL][]
+SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, COLUMN_TYPE FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'elabels' AND TABLE_NAME = 'create_time' ORDER BY TABLE_SCHEMA, TABLE_NAME
+
+[2017-10-25 13:24:42.065][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:24:42.077][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:42.102][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:42.147][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where DATE(create_time) = '2017-10-23'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:24:42.338][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:42.364][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:24:42.375][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000846*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=113 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:24:48.687][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:24:48.698][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:48.734][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:48.77][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where DATE(create_time) = '2017-10-24'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:24:48.964][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:48.989][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:24:49.000][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000971*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=120 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:24:59.746][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:24:59.757][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:59.783][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:24:59.807][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where DATE(update_time) = '2017-10-24'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:24:59.996][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:25:00.023][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:25:00.035][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000944*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=127 GROUP BY SEQ, STATE ORDER BY SEQ
+
+[2017-10-25 13:25:08.139][test_rds_mysql][006141][MYSQL][]
+SET PROFILING = 1
+
+[2017-10-25 13:25:08.15][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:25:08.176][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:25:08.213][test_rds_mysql][006141][MYSQL][]
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where DATE(update_time) = '2017-10-25'
+-- select count(*) from shop_goods where shop_id =1
+
+[2017-10-25 13:25:08.69][test_rds_mysql][006141][MYSQL][]
+SHOW STATUS
+
+[2017-10-25 13:25:08.717][test_rds_mysql][006141][MYSQL][]
+SELECT QUERY_ID, SUM(DURATION) AS SUM_DURATION FROM INFORMATION_SCHEMA.PROFILING GROUP BY QUERY_ID
+
+[2017-10-25 13:25:08.728][test_rds_mysql][006141][MYSQL][]
+SELECT STATE AS `Status`, ROUND(SUM(DURATION),7) AS `Duration`, CONCAT(ROUND(SUM(DURATION)/0.000951*100,3), '') AS `Percentage` FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=134 GROUP BY SEQ, STATE ORDER BY SEQ
+

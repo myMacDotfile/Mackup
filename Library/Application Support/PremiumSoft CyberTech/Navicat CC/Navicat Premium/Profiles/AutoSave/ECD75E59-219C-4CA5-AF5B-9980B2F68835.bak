@@ -1,0 +1,5 @@
+-- select count(*) from goods_for_show
+-- select category_name, amount from categorys_for_show
+
+select count(*) from shop_goods where DATE(update_time) = '2017-10-25'
+-- select count(*) from shop_goods where shop_id =1
